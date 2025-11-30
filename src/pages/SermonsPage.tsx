@@ -4,52 +4,52 @@ export function SermonsPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const sermons = [{
     title: 'Walking in Faith',
-    speaker: 'Pastor John Smith',
+    speaker: 'Pastor-----',
     date: 'December 10, 2023',
     duration: '45 min',
     series: 'Faith Foundations',
     description: 'Exploring what it means to trust God in uncertain times.',
-    thumbnail: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop'
+    thumbnail: ''
   }, {
     title: 'The Power of Prayer',
-    speaker: 'Pastor Sarah Johnson',
+    speaker: 'Minister-----',
     date: 'December 3, 2023',
     duration: '38 min',
     series: 'Spiritual Disciplines',
     description: 'Understanding the transformative power of consistent prayer.',
-    thumbnail: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=300&fit=crop'
+    thumbnail: ''
   }, {
     title: 'Love Your Neighbor',
-    speaker: 'Pastor John Smith',
+    speaker: 'Pastor-----',
     date: 'November 26, 2023',
     duration: '42 min',
     series: 'Living the Gospel',
     description: "Practical ways to show Christ's love in our daily lives.",
-    thumbnail: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=300&fit=crop'
+    thumbnail: ''
   }, {
     title: 'Finding Peace',
-    speaker: 'Pastor Sarah Johnson',
+    speaker: 'Minister ----',
     date: 'November 19, 2023',
     duration: '40 min',
     series: 'Inner Life',
     description: "Discovering God's peace in the midst of life's storms.",
-    thumbnail: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=300&fit=crop'
+    thumbnail: ''
   }, {
     title: 'Grace Abounds',
-    speaker: 'Pastor John Smith',
+    speaker: 'Pastor------',
     date: 'November 12, 2023',
     duration: '47 min',
     series: 'Faith Foundations',
     description: "Understanding the depth and breadth of God's grace.",
-    thumbnail: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop'
+    thumbnail: ''
   }, {
     title: 'Serving with Joy',
-    speaker: 'Pastor Sarah Johnson',
+    speaker: 'Pastor------',
     date: 'November 5, 2023',
     duration: '35 min',
     series: 'Living the Gospel',
     description: 'Finding fulfillment through serving others.',
-    thumbnail: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=300&fit=crop'
+    thumbnail: ''
   }];
   return <div className="w-full min-h-screen py-20 px-4">
       <div className="max-w-7xl mx-auto">

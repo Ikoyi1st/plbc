@@ -75,7 +75,7 @@ export function Navigation() {
           </div>
 
           {/* Mobile menu button */}
-          <motion.button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 rounded-md text-[var(--color-text-light)] hover:text-[var(--color-primary)] hover:bg-[var(--color-background)]" whileTap={{
+          <motion.button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 rounded-md text-purple-900 hover:text-[var(--color-primary)] hover:bg-[var(--color-background)]" whileTap={{
           scale: 0.95
         }}>
             <AnimatePresence mode="wait">
