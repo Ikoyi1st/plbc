@@ -1,5 +1,5 @@
 /* URL IMPORTS (SUCH AS FONT IMPORTS) SHOULD BE KEPT ABOVE TAILWIND IMPORTS - DO NOT DELETE THIS COMMENT */
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 /* PLEASE NOTE: THESE TAILWIND IMPORTS SHOULD NEVER BE DELETED - DO NOT DELETE THIS COMMENT */
 @import 'tailwindcss/base';
@@ -8,21 +8,85 @@
 /* DO NOT DELETE THESE TAILWIND IMPORTS, OTHERWISE THE STYLING WILL NOT RENDER AT ALL - DO NOT DELETE THIS COMMENT */
 
 :root {
-  --color-primary: #2563EB;
-  --color-secondary: #0EA5E9;
-  --color-accent: #3B82F6;
-  --color-background: #F8FAFC;
-  --color-surface: #FFFFFF;
-  --color-text: #1E293B;
-  --color-text-light: #64748B;
+  --color-primary-deep: #0d1b2a;
+  --color-primary: #1d4ed8;
+  --color-secondary: #1e3a8a;
+  --color-accent: #60a5fa;
+  --color-highlight: #eff6ff;
+  --color-background: #eef4fb;
+  --color-surface: #ffffff;
+  --color-surface-alt: #dbeafe;
+  --color-border: #c7d7ee;
+  --color-text: #0f172a;
+  --color-text-light: #334155;
+  --color-text-muted: #64748b;
+  --shadow-soft: 0 18px 40px -26px rgba(13, 27, 42, 0.22);
+  --shadow-strong: 0 24px 60px -30px rgba(13, 27, 42, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Manrope', sans-serif;
   background-color: var(--color-background);
+  background-image:
+    radial-gradient(circle at top left, rgba(96, 165, 250, 0.16), transparent 30%),
+    radial-gradient(circle at top right, rgba(29, 78, 216, 0.08), transparent 26%),
+    linear-gradient(180deg, #f8fbff 0%, var(--color-background) 55%, #e7effa 100%);
   color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Crimson Pro', serif;
+  font-family: 'DM Serif Display', serif;
+  color: var(--color-text);
+  letter-spacing: 0.01em;
+}
+
+a, button {
+  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease,
+    opacity 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+::selection {
+  background: rgba(29, 78, 216, 0.18);
+  color: var(--color-primary-deep);
+}
+
+.card-surface {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(214, 214, 214, 0.9);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(10px);
+}
+
+.section-surface {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.9));
+  border: 1px solid rgba(214, 214, 214, 0.86);
+  box-shadow: var(--shadow-soft);
+}
+
+.brand-gradient {
+  background:
+    linear-gradient(135deg, #0d1b2a 0%, #1e3a8a 52%, #60a5fa 100%);
+}
+
+.brand-gradient-soft {
+  background:
+    linear-gradient(135deg, rgba(13, 27, 42, 0.96) 0%, rgba(30, 58, 138, 0.92) 54%, rgba(96, 165, 250, 0.82) 100%);
 }

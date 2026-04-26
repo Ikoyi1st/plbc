@@ -1,152 +1,126 @@
-import React from 'react';
-import { UsersIcon, GamepadIcon, MusicIcon, MessageCircleIcon } from 'lucide-react';
+import { GamepadIcon, MessageCircleIcon, MusicIcon, UsersIcon } from 'lucide-react';
+
 export function YouthCommunityPage() {
-  const activities = [{
-    icon: MusicIcon,
-    title: 'Worship Nights',
-    description: 'Contemporary worship and praise every Friday evening',
-    time: 'Fridays, 6:00 PM'
-  }, {
-    icon: GamepadIcon,
-    title: 'Game Nights',
-    description: 'Fun competitions, board games, and fellowship',
-    time: 'Last Saturday of month'
-  }, {
-    icon: MessageCircleIcon,
-    title: 'Small Groups',
-    description: 'Connect deeply with peers in discussion groups',
-    time: 'Wednesdays, 7:00 PM'
-  }];
-  return <div className="w-full min-h-screen py-20 px-4">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-yellow-500 to-amber-500 rounded-2xl mb-6">
-            <UsersIcon className="w-8 h-8 text-white" />
+  const activities = [
+    {
+      icon: MusicIcon,
+      title: 'Worship Nights',
+      description: 'Contemporary worship and praise every Friday evening',
+      time: 'Fridays, 6:00 PM',
+    },
+    {
+      icon: GamepadIcon,
+      title: 'Game Nights',
+      description: 'Fun competitions, board games, and fellowship',
+      time: 'Last Saturday of month',
+    },
+    {
+      icon: MessageCircleIcon,
+      title: 'Small Groups',
+      description: 'Connect deeply with peers in discussion groups',
+      time: 'Wednesdays, 7:00 PM',
+    },
+  ];
+
+  const posts = [
+    {
+      name: 'Sarah M.',
+      time: '2 hours ago',
+      accent: 'from-yellow-500 to-amber-500',
+      text: "Amazing worship night last Friday! Can't wait for the next one.",
+    },
+    {
+      name: 'James K.',
+      time: '5 hours ago',
+      accent: 'from-blue-500 to-cyan-500',
+      text: "Who's coming to game night this Saturday? Let's make it epic!",
+    },
+    {
+      name: 'Emily R.',
+      time: '1 day ago',
+      accent: 'from-purple-500 to-pink-500',
+      text: 'Small group discussions have been so meaningful. Grateful for this community!',
+    },
+    {
+      name: 'Michael T.',
+      time: '2 days ago',
+      accent: 'from-green-500 to-emerald-500',
+      text: 'Excited for the upcoming retreat! Who else is going?',
+    },
+  ];
+
+  return (
+    <div className="min-h-screen w-full px-4 py-20">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-16 text-center">
+          <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-yellow-500 to-amber-500">
+            <UsersIcon className="h-8 w-8 text-white" />
           </div>
-          <h1 className="font-serif font-bold text-5xl md:text-6xl mb-6">
-            Youth Community
-          </h1>
-          <p className="text-xl text-[var(--color-text-light)] max-w-3xl mx-auto">
-            A vibrant community for ages 13-25 to connect, grow, and have fun
-            together.
+          <h1 className="mb-6 text-5xl font-bold md:text-6xl">Youth Community</h1>
+          <p className="mx-auto max-w-3xl text-xl text-[var(--color-text-light)]">
+            A vibrant community for ages 13-25 to connect, grow, and have fun together.
           </p>
         </div>
 
-        {/* Hero Image */}
-        <div className="relative h-96 rounded-2xl overflow-hidden mb-16">
-          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&h=600&fit=crop" alt="Youth gathering" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+        <div className="relative mb-16 h-96 overflow-hidden rounded-2xl">
+          <img
+            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&h=600&fit=crop"
+            alt="Youth gathering"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 to-transparent">
             <div className="p-8 text-white">
-              <h2 className="font-serif font-bold text-4xl mb-2">
-                Join Us
-              </h2>
+              <h2 className="mb-2 text-4xl font-bold">Join Us</h2>
               <p className="text-xl">Worship, games, and great conversations</p>
             </div>
           </div>
         </div>
 
-        {/* Activities */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          {activities.map((activity, index) => <div key={index} className="bg-white rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow">
-              <div className="w-14 h-14 bg-gradient-to-br from-yellow-500 to-amber-500 rounded-xl flex items-center justify-center mb-6">
-                <activity.icon className="w-7 h-7 text-white" />
+        <div className="mb-16 grid grid-cols-1 gap-6 md:grid-cols-3">
+          {activities.map((activity) => (
+            <div
+              key={activity.title}
+              className="rounded-xl bg-white p-8 shadow-sm transition-shadow hover:shadow-lg"
+            >
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-yellow-500 to-amber-500">
+                <activity.icon className="h-7 w-7 text-white" />
               </div>
-              <h3 className="font-serif font-bold text-2xl mb-3">
-                {activity.title}
-              </h3>
-              <p className="text-[var(--color-text-light)] mb-4">
-                {activity.description}
-              </p>
-              <p className="text-sm font-semibold text-[var(--color-primary)]">
-                {activity.time}
-              </p>
-            </div>)}
+              <h3 className="mb-3 text-2xl font-bold">{activity.title}</h3>
+              <p className="mb-4 text-[var(--color-text-light)]">{activity.description}</p>
+              <p className="text-sm font-semibold text-[var(--color-primary)]">{activity.time}</p>
+            </div>
+          ))}
         </div>
 
-        {/* Social Feed Section */}
-        <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm mb-16">
-          <h2 className="font-serif font-bold text-3xl md:text-4xl mb-8 text-center">
-            Connect & Share
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-[var(--color-background)] rounded-xl p-6">
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-amber-500 rounded-full"></div>
-                <div>
-                  <p className="font-semibold">Sarah M.</p>
-                  <p className="text-sm text-[var(--color-text-light)]">
-                    2 hours ago
-                  </p>
+        <div className="mb-16 rounded-2xl bg-white p-8 shadow-sm md:p-12">
+          <h2 className="mb-8 text-center text-3xl font-bold md:text-4xl">Connect & Share</h2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {posts.map((post) => (
+              <div key={`${post.name}-${post.time}`} className="rounded-xl bg-[var(--color-background)] p-6">
+                <div className="mb-4 flex items-center space-x-3">
+                  <div className={`h-12 w-12 rounded-full bg-gradient-to-br ${post.accent}`} />
+                  <div>
+                    <p className="font-semibold">{post.name}</p>
+                    <p className="text-sm text-[var(--color-text-light)]">{post.time}</p>
+                  </div>
                 </div>
+                <p className="text-[var(--color-text-light)]">{post.text}</p>
               </div>
-              <p className="text-[var(--color-text-light)]">
-                Amazing worship night last Friday! Can't wait for the next one
-                🙏✨
-              </p>
-            </div>
-
-            <div className="bg-[var(--color-background)] rounded-xl p-6">
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full"></div>
-                <div>
-                  <p className="font-semibold">James K.</p>
-                  <p className="text-sm text-[var(--color-text-light)]">
-                    5 hours ago
-                  </p>
-                </div>
-              </div>
-              <p className="text-[var(--color-text-light)]">
-                Who's coming to game night this Saturday? Let's make it epic! 🎮
-              </p>
-            </div>
-
-            <div className="bg-[var(--color-background)] rounded-xl p-6">
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full"></div>
-                <div>
-                  <p className="font-semibold">Emily R.</p>
-                  <p className="text-sm text-[var(--color-text-light)]">
-                    1 day ago
-                  </p>
-                </div>
-              </div>
-              <p className="text-[var(--color-text-light)]">
-                Small group discussions have been so meaningful. Grateful for
-                this community! 💙
-              </p>
-            </div>
-
-            <div className="bg-[var(--color-background)] rounded-xl p-6">
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full"></div>
-                <div>
-                  <p className="font-semibold">Michael T.</p>
-                  <p className="text-sm text-[var(--color-text-light)]">
-                    2 days ago
-                  </p>
-                </div>
-              </div>
-              <p className="text-[var(--color-text-light)]">
-                Excited for the upcoming retreat! Who else is going? 🏕️
-              </p>
-            </div>
+            ))}
           </div>
         </div>
 
-        {/* Join CTA */}
-        <div className="bg-gradient-to-br from-indigo-950 via-purple-900 to-fuchsia-900 rounded-2xl p-8 md:p-12 text-white text-center">
-          <h2 className="font-serif font-bold text-3xl md:text-4xl mb-4">
-            Be Part of Something Amazing
-          </h2>
-          <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
-            Join our youth community and experience faith, friendship, and fun
-            like never before.
+        <div className="rounded-2xl bg-gradient-to-br from-indigo-950 via-purple-900 to-fuchsia-900 p-8 text-center text-white md:p-12">
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl">Be Part of Something Amazing</h2>
+          <p className="mx-auto mb-8 max-w-2xl text-xl text-white/90">
+            Join our youth community and experience faith, friendship, and fun like never
+            before.
           </p>
-          <button className="px-8 py-4 bg-white text-[var(--color-primary)] rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+          <button className="rounded-lg bg-white px-8 py-4 font-semibold text-[var(--color-primary)] transition-colors hover:bg-gray-100">
             Join the Community
           </button>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 }

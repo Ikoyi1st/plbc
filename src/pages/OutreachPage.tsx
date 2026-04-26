@@ -1,4 +1,3 @@
-import React from 'react';
 import { HeartIcon, HandHelpingIcon, GraduationCapIcon, DollarSignIcon } from 'lucide-react';
 export function OutreachPage() {
   const programs = [{
